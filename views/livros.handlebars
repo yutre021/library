@@ -1,0 +1,33 @@
+<section id="livros" class="conteiner">
+
+    <h1>Todos Os Livros</h1>
+    <h1>Procure um Livro que gosta</h1>
+    <form action="/livros/search" class="search-form">
+      <i class="fas fa-search"></i>
+      <input type="search" name="term" placeholder="Sitio do picapau amarelo, etc...">
+      <input type="submit" value="Procurar">
+    </form>
+    <p></p>
+    {{#each usersDocuments}}
+
+      <div class="gig">
+       <div class="id">
+        <small>ID do livro: <span>{{this.id}}</span></small>
+      </div>
+      <h4>{{this.name}}</h4>
+      <p>{{this.author}}</p>
+      <div class="gender">
+        <small>Gênero: <span>{{this.gender}}</span></small>
+      </div>
+      <div class="data">
+        <small>Data da Publicação: <span>{{this.data}}</span></small>
+      </div>
+            <h1> </h1>
+      <a href="/livros/editar_livro" class="btn btn-danger btn-sm">Editar</a>
+      <a href="/livros/deletar_livro/{{this.id}}" class="btn btn-danger btn-sm">Deletar</a>
+    </div>
+    {{else}}
+      <p>Nenhum livro disponível</p>
+    {{/each}}
+
+  </section>

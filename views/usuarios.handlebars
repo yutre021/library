@@ -1,0 +1,31 @@
+<section id="usuarios" class="conteiner">
+
+    <h1>Todos os Usuários</h1>
+    <h1>Procure um usuário</h1>
+        <form action="/usuarios/search1" class="search-form">
+      <i class="fas fa-search"></i>
+      <input type="search" name="term" placeholder="nome...">
+      <input type="submit" value="Procurar">
+    </form>
+    <p></p>
+    {{#each usersDocuments}}
+
+      <div class="gig">
+        <h4>{{this.id}}</h4>
+      <h4>{{this.name}}</h4>
+      <p>{{this.email}}</p>
+      <div class="book">
+        <small>Nome do livro: <span>{{this.book}}</span></small>
+      </div>
+      <div class="code">
+        <small>Código: <span>{{this.code}}</span></small>
+      </div>
+      <h1> </h1>
+      <a href="/usuarios/editar_usuario" class="btn btn-danger btn-sm">Editar</a>
+      <a href="/usuarios/deletar_usuario/{{this.id}}" class="btn btn-danger btn-sm">Deletar</a>
+    </div>
+    {{else}}
+      <p>Nenhum Usuário disponível</p>
+    {{/each}}
+
+  </section>

@@ -1,0 +1,32 @@
+<section id="add_users" class="container">
+    <div class="form-wrap">
+      <h1>Adicione um Usuário</h1>
+      {{#each errors}}
+        <div class="error">
+          <p>{{text}}</p>
+        </div>
+      {{/each}}
+      <form action="/usuarios/add_users" method="POST">
+        <div class="input-group">
+          <label for="name">Nome do Usuário</label>
+          <input type="text" name="name" id="name" class="input-box" placeholder="Nome"
+            maxlength="100" value={{name}}>
+        </div>
+        <div class="input-group">
+          <label for="author">E-mail</label>
+          <input type="text" name="email" id="emailr" class="input-box" placeholder="E-mail do Usuário"
+          maxlength="100" value={{email}}>
+        </div>
+                <div class="input-group">
+          <label for="description">Livro</label>
+          <textarea name="book" id="book" class="input-box" placeholder="Nome do livro"
+            rows="10">{{book}}</textarea>
+        </div>
+        <div class="input-group">
+          <label for="data">Código do Livro</label>
+          <input type="number" name="code" id="code" class="code" placeholder="Código" value={{code}}>
+        </div>
+        <input type="submit" value="Adicionar" class="btn btn-reverse">
+      </form>
+    </div>
+  </section>

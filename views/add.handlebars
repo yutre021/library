@@ -1,0 +1,32 @@
+<section id="add" class="container">
+    <div class="form-wrap">
+      <h1>Adicione um Livro</h1>
+      {{#each errors}}
+        <div class="error">
+          <p>{{text}}</p>
+        </div>
+      {{/each}}
+      <form action="/livros/add" method="POST">
+        <div class="input-group">
+          <label for="name">Nome do Livro</label>
+          <input type="text" name="name" id="name" class="input-box" placeholder="Nome"
+            maxlength="100" value={{name}}>
+        </div>
+        <div class="input-group">
+          <label for="author">Autor</label>
+          <input type="text" name="author" id="author" class="input-box" placeholder="Autor"
+          maxlength="100" value={{author}}>
+        </div>
+                <div class="input-group">
+          <label for="description">Gênero</label>
+          <textarea name="gender" id="gender" class="input-box" placeholder="Gênero"
+            rows="10">{{gender}}</textarea>
+        </div>
+        <div class="input-group">
+          <label for="data">Data de publicação</label>
+          <input type="number" name="data" id="data" class="input-box" placeholder="Ano" value={{data}}>
+        </div>
+        <input type="submit" value="Adicionar" class="btn btn-reverse">
+      </form>
+    </div>
+  </section>
